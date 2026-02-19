@@ -48,7 +48,7 @@ class _AlbumSearchState extends State<AlbumSearch> {
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             decoration: BoxDecoration(
-              color: AppColors.f01,
+              color: AppColors.gray50,
               borderRadius: BorderRadius.circular(12),
             ),
             child: AppTextField(
@@ -57,7 +57,7 @@ class _AlbumSearchState extends State<AlbumSearch> {
               prefixIcon: const Icon(
                 Icons.search,
                 size: 20,
-                color: AppColors.f01,
+                color: AppColors.gray500,
               ),
               suffixIcon: _nameController.text.isNotEmpty
                   ? IconButton(
@@ -81,7 +81,7 @@ class _AlbumSearchState extends State<AlbumSearch> {
                 child: Text(
                   '검색 결과가 없습니다.',
                   style: TextStyle(
-                    color: AppColors.f01,
+                    color: AppColors.gray500,
                     fontSize: 14,
                   ),
                 ),

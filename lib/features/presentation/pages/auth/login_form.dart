@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:petAblumMobile/core/theme/app_button_theme.dart';
 import 'package:petAblumMobile/core/theme/app_colors.dart';
 import 'package:petAblumMobile/core/theme/app_fonts_style_suit.dart';
@@ -131,13 +132,13 @@ class _IdLoginPageState extends State<IdLoginPage> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _snsButton(asset: 'assets/system/icons/kakao.png', onTap: () => debugPrint('카카오 로그인')),
+            _snsButton(asset: 'assets/system/icons/kakao.svg', onTap: () => debugPrint('카카오 로그인')),
             const SizedBox(width: 10),
-            _snsButton(asset: 'assets/system/icons/google.png', onTap: () => debugPrint('구글 로그인')),
+            _snsButton(asset: 'assets/system/icons/google.svg', onTap: () => debugPrint('구글 로그인')),
             const SizedBox(width: 10),
-            _snsButton(asset: 'assets/system/icons/apple.png', onTap: () => debugPrint('애플 로그인')),
+            _snsButton(asset: 'assets/system/icons/apple.svg', onTap: () => debugPrint('애플 로그인')),
             const SizedBox(width: 10),
-            _snsButton(asset: 'assets/system/icons/naver.png', onTap: () => debugPrint('네이버 로그인')),
+            _snsButton(asset: 'assets/system/icons/naver.svg', onTap: () => debugPrint('네이버 로그인')),
           ],
         ),
         const SizedBox(height: 32),
@@ -148,7 +149,7 @@ class _IdLoginPageState extends State<IdLoginPage> {
   Widget _snsButton({required String asset, required VoidCallback onTap}) {
     return GestureDetector(
       onTap: onTap,
-      child: Image.asset(
+      child: SvgPicture.asset(
         asset,
         width: 52,
         height: 52,

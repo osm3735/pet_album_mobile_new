@@ -28,8 +28,8 @@ class _DrawingToolPanelState extends State<DrawingToolPanel> {
   @override
   void initState() {
     super.initState();
-    selectedColor = ColorSelectorSection.colors.isNotEmpty
-        ? ColorSelectorSection.colors[0]
+    selectedColor = ColorSelectorSection.color_list.isNotEmpty
+        ? ColorSelectorSection.color_list[0]
         : const Color(0xFFFF5252);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _notifyChanges();
@@ -81,13 +81,13 @@ class _DrawingToolPanelState extends State<DrawingToolPanel> {
         Text(
           '그리기',
           style: AppTextStyle.body16M120.copyWith(
-            color: AppColors.f01,
+            color: AppColors.fontStrong,
             fontWeight: FontWeight.w600,
           ),
         ),
         IconButton(
           icon: const Icon(Icons.close),
-          color: AppColors.f01,
+          color: AppColors.gray500,
           onPressed: widget.onClose,
           padding: EdgeInsets.zero,
           constraints: const BoxConstraints(),
@@ -103,7 +103,7 @@ class _DrawingToolPanelState extends State<DrawingToolPanel> {
         Text(
           '선 스타일',
           style: AppTextStyle.body16M120.copyWith(
-            color: AppColors.f01,
+            color: AppColors.fontStrong,
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -112,7 +112,7 @@ class _DrawingToolPanelState extends State<DrawingToolPanel> {
           decoration: BoxDecoration(
             border: Border(
               bottom: BorderSide(
-                color: AppColors.f01,
+                color: AppColors.gray300,
                 width: 1,
               ),
             ),
@@ -123,14 +123,14 @@ class _DrawingToolPanelState extends State<DrawingToolPanel> {
               border: InputBorder.none,
               contentPadding: EdgeInsets.symmetric(vertical: 8),
             ),
-            icon: Icon(Icons.keyboard_arrow_down, color: AppColors.f01),
+            icon: Icon(Icons.keyboard_arrow_down, color: AppColors.gray500),
             items: lineStyles.map((style) {
               return DropdownMenuItem(
                 value: style,
                 child: Text(
                   style,
                   style: AppTextStyle.body16M120.copyWith(
-                    color: AppColors.f01,
+                    color: AppColors.fontStrong,
                   ),
                 ),
               );
@@ -156,7 +156,7 @@ class _DrawingToolPanelState extends State<DrawingToolPanel> {
         Text(
           '선 두께',
           style: AppTextStyle.body16M120.copyWith(
-            color: AppColors.f01,
+            color: AppColors.fontStrong,
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -165,7 +165,7 @@ class _DrawingToolPanelState extends State<DrawingToolPanel> {
           children: [
             IconButton(
               icon: const Icon(Icons.remove),
-              color: AppColors.f01,
+              color: AppColors.gray500,
               onPressed: _decreaseLineWidth,
             ),
             Expanded(
@@ -177,8 +177,8 @@ class _DrawingToolPanelState extends State<DrawingToolPanel> {
                     padding: const EdgeInsets.only(bottom: 8),
                     child: Text(
                       '${lineWidth.round()}',
-                      style: AppTextStyle.body16R120.copyWith(
-                        color: AppColors.f01,
+                      style: AppTextStyle.body14M120.copyWith(
+                        color: AppColors.fontStrong,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -188,10 +188,10 @@ class _DrawingToolPanelState extends State<DrawingToolPanel> {
                     padding: const EdgeInsets.only(top: 24), // 텍스트 공간 확보
                     child: SliderTheme(
                       data: SliderThemeData(
-                        activeTrackColor: AppColors.f01,
-                        inactiveTrackColor: AppColors.f01,
-                        thumbColor: AppColors.f01,
-                        overlayColor: AppColors.f01.withOpacity(0.2),
+                        activeTrackColor: AppColors.gray300,
+                        inactiveTrackColor: AppColors.gray500,
+                        thumbColor: AppColors.gray500,
+                        overlayColor: AppColors.gray500.withOpacity(0.2),
                         overlayShape: const RoundSliderOverlayShape(overlayRadius: 16),
                         thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 12),
                         trackHeight: 4,
@@ -216,7 +216,7 @@ class _DrawingToolPanelState extends State<DrawingToolPanel> {
             ),
             IconButton(
               icon: const Icon(Icons.add),
-              color: AppColors.f01,
+              color: AppColors.gray500,
               onPressed: _increaseLineWidth,
             ),
           ],

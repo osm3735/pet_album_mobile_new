@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:petAblumMobile/core/theme/app_colors.dart';
 import 'package:petAblumMobile/core/theme/app_common_button_styles.dart';
 import 'package:petAblumMobile/core/theme/app_fonts_style_suit.dart';
@@ -38,30 +39,32 @@ class Oauth2LoginPage extends StatelessWidget {
                     foregroundColor: AppColors.f05,
                   ),
                   onPressed: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                  child: Stack(
+                    alignment: Alignment.center,
                     children: [
-                      const SizedBox(width: 20),
-                      Image.asset(
-                        'assets/system/icons/kakao_logo.png',
-                        width: 32,
-                        height: 32,
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: SvgPicture.asset(
+                          'assets/system/icons/kakao_logo.svg',
+                          width: 32,
+                          height: 32,
+                        ),
                       ),
-                      const SizedBox(width: 58),
                       const Text('카카오 로그인 하기'),
                     ],
                   ),
                 ),
-              ),// SVG  변환
+              ),
 
               const SizedBox(height: 8),
 
               // 구글 로그인
               SizedBox(
-                width: double.infinity,
+                width: 350,
+                height: 55,
                 child: OutlinedButton(
                   style: AppButtonStyles.base(
-                    backgroundColor:AppColors.gray01,
+                    backgroundColor: AppColors.gray01,
                     foregroundColor: Colors.black,
                   ).copyWith(
                     side: WidgetStateProperty.all(
@@ -69,15 +72,17 @@ class Oauth2LoginPage extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  child: Stack(
+                    alignment: Alignment.center,
                     children: [
-                      Image.asset(
-                        'assets/system/icons/google_logo.png',
-                        width: 20,
-                        height: 20,
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: SvgPicture.asset(
+                          'assets/system/icons/google_logo.svg',
+                          width: 32,
+                          height: 32,
+                        ),
                       ),
-                      const SizedBox(width: 8),
                       const Text('구글 로그인 하기'),
                     ],
                   ),
@@ -104,26 +109,16 @@ class Oauth2LoginPage extends StatelessWidget {
               const SizedBox(height: 20),
 
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  IconButton(
-                    iconSize: 36,
-                    onPressed: () {},
-                    icon: Image.asset(
-                      'assets/system/icons/apple.png',
-                      width: 52,
-                      height: 52,
-                    ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: SvgPicture.asset('assets/system/icons/apple.svg', width: 52, height: 52),
                   ),
-                  const SizedBox(width: 8),
-                  IconButton(
-                    iconSize: 36,
-                    onPressed: () {},
-                    icon: Image.asset(
-                      'assets/system/icons/naver.png',
-                      width: 52,
-                      height: 52,
-                    ),
+                  const SizedBox(width: 8), // 원하는 간격 명시적으로 지정
+                  GestureDetector(
+                    onTap: () {},
+                    child: SvgPicture.asset('assets/system/icons/naver.svg', width: 52, height: 52),
                   ),
                 ],
               ),//추후
