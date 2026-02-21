@@ -7,7 +7,6 @@ import 'package:petAblumMobile/core/widgets/common_app_bar_main_scaffold.dart';
 import 'package:petAblumMobile/features/presentation/pages/album/album_grid_item.dart';
 import 'package:petAblumMobile/features/presentation/pages/album/album_common_actions.dart';
 import 'package:petAblumMobile/features/presentation/pages/album/album_search_page.dart';
-import 'package:petAblumMobile/features/presentation/pages/album_crud/album_edit_form.dart';
 import 'package:petAblumMobile/features/presentation/pages/album_crud/album_view.dart';
 
 class AlbumPage extends StatefulWidget {
@@ -94,7 +93,9 @@ class _AlbumPageState extends State<AlbumPage> {
   Widget _buildHeader() {
     return Row(
       children: [
-        Text('나의 앨범', style: AppText.titleStrong),
+        Text('나의 앨범', style: AppTextStyle.titlePage28Sb130.
+        copyWith(color: AppColors.f05)
+        ),
         const Spacer(),
         IconButton(
           icon: Icon(
@@ -115,8 +116,8 @@ class _AlbumPageState extends State<AlbumPage> {
 
   Widget _buildAddButton() {
     return Container(
-      width: 36,
-      height: 36,
+      width: 40,
+      height: 40,
       decoration: const BoxDecoration(
         color: Colors.black,
         shape: BoxShape.circle,
@@ -125,12 +126,7 @@ class _AlbumPageState extends State<AlbumPage> {
         padding: EdgeInsets.zero,
         icon: const Icon(Icons.add, color: Colors.white),
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => const AlbumEditFormPage(),
-            ),
-          );
+
         },
       ),
     );

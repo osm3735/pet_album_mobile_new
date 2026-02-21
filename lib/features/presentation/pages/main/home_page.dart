@@ -4,6 +4,7 @@ import 'package:petAblumMobile/core/theme/app_colors.dart';
 import 'package:petAblumMobile/core/widgets/common_app_bar_main_scaffold.dart';
 import 'package:petAblumMobile/features/presentation/pages/main/alram.dart';
 import 'package:petAblumMobile/features/presentation/pages/pet_crud/pet_list.dart';
+import 'package:petAblumMobile/core/theme/app_fonts_style_suit.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

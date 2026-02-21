@@ -8,6 +8,7 @@ import 'package:petAblumMobile/core/widgets/common_app_bar_main_scaffold.dart';
 import 'package:petAblumMobile/core/widgets/pet_card.dart';
 import 'package:petAblumMobile/features/presentation/pages/main/settings_page.dart';
 import 'package:petAblumMobile/features/presentation/pages/pet_crud/pet_list.dart';
+import 'package:petAblumMobile/core/theme/app_fonts_style_suit.dart';
 
 class MyPage extends StatefulWidget {
   const MyPage({super.key});
@@ -28,7 +29,7 @@ class _MyPageState extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.f01,
+      backgroundColor: AppColors.bg,
       appBar: CommonMainAppBar(
         title: "마이페이지",
         actions: [
@@ -58,8 +59,8 @@ class _MyPageState extends State<MyPage> {
                 children: [
                   Center(
                     child: Container(
-                      width: 120,
-                      height: 120,
+                      width: 90,
+                      height: 90,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.white,
@@ -89,24 +90,24 @@ class _MyPageState extends State<MyPage> {
                   const SizedBox(height: 16),
                   Text(
                     '조혜원',
-                    style: AppText.titleStrong,
+                    style: AppTextStyle.subtitle20Sb120,
                   ),
                   const SizedBox(height: 8),
                   Text(
                     '또또네 가족',
-                    style: AppTextStyle.body16R120.copyWith(
-                      color: AppColors.f01,
+                    style: AppTextStyle.description14R120.copyWith(
+                      color: AppColors.f04,
                     ),
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 16),
                   SizedBox(
-                    width: 140,
-                    height: 40,
+                    width: 99,
+                    height: 41,
                     child:
                     ElevatedButton(
                       style: AppButtonStyles.base(
-                        backgroundColor: Colors.white,
-                        foregroundColor: AppColors.f01,
+                        backgroundColor: AppColors.white,
+                        foregroundColor: AppColors.gray01,
                       ).copyWith(
                         elevation: MaterialStateProperty.all(2), // 살짝 떠 있는 느낌
                         shadowColor: MaterialStateProperty.all(Colors.black.withOpacity(0.08)),
@@ -120,7 +121,7 @@ class _MyPageState extends State<MyPage> {
                         padding: MaterialStateProperty.all(
                           const EdgeInsets.symmetric(
                             horizontal: 16,
-                            vertical: 8,
+                            vertical: 12,
                           ),
                         ),
 
@@ -131,15 +132,15 @@ class _MyPageState extends State<MyPage> {
                       },
                       child: Text(
                         '내 정보 수정',
-                        style: AppTextStyle.body16R120.copyWith(
-                          color: Colors.black,
+                        style: AppTextStyle.description14R120.copyWith(
+                          color: AppColors.f05,
                         ),
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 24),
+              SizedBox(height: 32),
               // 반려동물 정보 카드
               _buildPetCard(0),
               // ListView(
@@ -155,159 +156,242 @@ class _MyPageState extends State<MyPage> {
               Center(
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 350),
-                  child:Container(
-                    padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: AppColors.white,
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    width: 350,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '반려동물 정보',
-                          style: AppText.titleStrong,
-                        ),
-                        const SizedBox(height: 20),
+                  child: Column(
+                    children: [
 
-                        // 성향
-                        Row(
+                      // 박스
+                      Container(
+                        width: 350,
+                        padding: const EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: AppColors.white,
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(
-                              width: 60,
-                              child: Text(
-                                '성향',
-                                style: AppText.bodyPrimary.copyWith(
-                                  color: AppColors.f01,
-                                ),
+
+                            Text(
+                              '반려동물 정보',
+                              style: AppTextStyle.subtitle20M120.copyWith(
+                                color: AppColors.f05,
                               ),
                             ),
-                            const SizedBox(width: 12),
-                            Expanded(
-                              child: Wrap(
-                                spacing: 8,
-                                runSpacing: 8,
-                                children: [
-                                  _buildChip('쿤스리 주인'),
-                                  _buildChip('이웃집 쉽게 주위 필요'),
-                                  _buildChip('인적경영있음'),
-                                  _buildChip('분리불안'),
-                                ],
-                              ),
+                            const SizedBox(height: 20),
+
+                            // 성향
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width: 60,
+                                  child: Container(
+                                    width: 40,
+                                    height: 29,
+                                    padding: const EdgeInsets.fromLTRB(4, 7.5, 5, 7.5),
+                                    child: Text(
+                                      '성향',
+                                      style: AppTextStyle.caption12R120.copyWith(
+                                        color: AppColors.f03,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(width: 12),
+                                Expanded(
+                                  child: Wrap(
+                                    spacing: 6,
+                                    runSpacing: 6,
+                                    children: [
+                                      _buildChip('큰소리 주의'),
+                                      _buildChip('이물질 섭취 주위 필요'),
+                                      _buildChip('입질경험있음'),
+                                      _buildChip('분리불안'),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 16),
+
+                            // 건강
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width: 60,
+                                  child: Container(
+                                    width: 40,
+                                    height: 29,
+                                    padding: const EdgeInsets.fromLTRB(4, 7.5, 5, 7.5),
+                                    child: Text(
+                                      '건강',
+                                      style: AppTextStyle.caption12R120.copyWith(
+                                        color: AppColors.f03,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(width: 12),
+                                Expanded(
+                                  child: Wrap(
+                                    spacing: 8,
+                                    runSpacing: 8,
+                                    children: [
+                                      _buildChip('관절문제있음'),
+                                      _buildChip('슬개골문제 있음'),
+                                      _buildChip('피부문제있음'),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 20),
+
+                            // 복용약
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width: 60,
+                                  child: Container(
+                                    width: 40,
+                                    height: 29,
+                                    padding: const EdgeInsets.fromLTRB(4, 7.5, 5, 7.5),
+                                    child: Text(
+                                      '복용약',
+                                      style: AppTextStyle.caption12R120.copyWith(
+                                        color: AppColors.f03,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(width: 12),
+                                Expanded(
+                                  child: Wrap(
+                                    spacing: 8,
+                                    runSpacing: 8,
+                                    children: [
+                                      _buildChip('없음'),
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
-                        const SizedBox(height: 20),
+                      ),
 
-                        // 건강
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              width: 60,
-                              child: Text(
-                                '건강',
-                                style: AppText.bodyPrimary.copyWith(
-                                  color: AppColors.f01,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(width: 12),
-                            Expanded(
-                              child: Wrap(
-                                spacing: 8,
-                                runSpacing: 8,
-                                children: [
-                                  _buildChip('관절문제있음'),
-                                  _buildChip('슬개골문제 있음'),
-                                  _buildChip('피부문제있음'),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 20),
+                      const SizedBox(height: 16),
 
-                        // 특등의
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              width: 60,
-                              child: Text(
-                                '특등의',
-                                style: AppText.bodyPrimary.copyWith(
-                                  color: AppColors.f01,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(width: 12),
-                            Expanded(
-                              child: Text(
-                                '없음',
-                                style: AppText.bodyPrimary,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 20),
+                      //페이지 인디케이터
+                      _buildPageIndicator(),
 
-                        // 페이지 인디케이터
-                        _buildPageIndicator(),
-                      ],
-                    ),
+                    ],
                   ),
                 ),
               ),
 
+
               const SizedBox(height: 40),
 
               // 반려동물
-              Text(
-                '반려동물',
-                style: AppText.titleStrong,
+              SizedBox(
+                width: 350,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '반려동물',
+                      style: AppTextStyle.subtitle20M120.copyWith(
+                        color: AppColors.f05,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 6,
+                      ),
+                      child: Text(
+                        '내 앨범',
+                        style: AppTextStyle.body16M120.copyWith(
+                          color: AppColors.f04,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              const SizedBox(height: 8),
-              Text(
-                '내 엘범',
-                style: AppText.bodyPrimary,
-              ),
+
+
 
               const SizedBox(height: 20),
-
+//패밀리
               Text(
                 '패밀리',
-                style: AppText.titleStrong,
+                style: AppTextStyle.subtitle20M120.copyWith(
+                  color: AppColors.f05,
+                ),
               ),
+
               const SizedBox(height: 8),
-              Text(
-                '패밀리 계정 만들기',
-                style: AppText.bodyPrimary,
+
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 6),
+                child: Text(
+                  '패밀리 계정',
+                  style: AppTextStyle.body16M120.copyWith(
+                    color: AppColors.f04,
+                  ),
+                ),
               ),
-              const SizedBox(height: 8),
-              Text(
-                '패밀리 관리하기',
-                style: AppText.bodyPrimary,
+
+              const SizedBox(height: 0),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 6),
+                child: Text(
+                  '패밀리 관리하기',
+                  style: AppTextStyle.body16M120.copyWith(
+                    color: AppColors.f04,
+                  ),
+                ),
               ),
 
               const SizedBox(height: 20),
+
+
 
               // 펫시터
               Text(
                 '펫시터',
-                style: AppText.titleStrong,
+                style: AppTextStyle.subtitle20M120.copyWith(
+                  color: AppColors.f05,
+                ),
               ),
+
               const SizedBox(height: 8),
-              Text(
-                '펫시터 이용 내역',
-                style: AppText.bodyPrimary,
+
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 6),
+                child: Text(
+                  '펫시터 이용 내역',
+                  style: AppTextStyle.body16M120.copyWith(
+                    color: AppColors.f04,
+                  ),
+                ),
               ),
-              const SizedBox(height: 8),
-              Text(
-                '내 후기 관리',
-                style: AppText.bodyPrimary,
+
+              const SizedBox(height: 0),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 6),
+                child: Text(
+                  '내 후기 관리',
+                  style: AppTextStyle.body16M120.copyWith(
+                    color: AppColors.f04,
+                  ),
+                ),
               ),
 
               const SizedBox(height: 20),
@@ -315,31 +399,58 @@ class _MyPageState extends State<MyPage> {
               // 결제
               Text(
                 '결제',
-                style: AppText.titleStrong,
+                style: AppTextStyle.subtitle20M120.copyWith(
+                  color: AppColors.f05,
+                ),
               ),
+
               const SizedBox(height: 8),
-              Text(
-                '결제수단 등록',
-                style: AppText.bodyPrimary,
+
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 6),
+                child: Text(
+                  '결제수단 등록',
+                  style: AppTextStyle.body16M120.copyWith(
+                    color: AppColors.f04,
+                  ),
+                ),
               ),
-              const SizedBox(height: 8),
-              Text(
-                '결제수단 변경',
-                style: AppText.bodyPrimary,
+
+              const SizedBox(height: 0),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 6),
+                child: Text(
+                  '결제수단 변경',
+                  style: AppTextStyle.body16M120.copyWith(
+                    color: AppColors.f04,
+                  ),
+                ),
               ),
+
 
               const SizedBox(height: 20),
 
               // 라이프케어
               Text(
                 '라이프케어',
-                style: AppText.titleStrong,
+                style: AppTextStyle.subtitle20M120.copyWith(
+                  color: AppColors.f05,
+                ),
               ),
+
               const SizedBox(height: 8),
-              Text(
-                '라이프케어란?',
-                style: AppText.bodyPrimary,
+
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 6),
+                child: Text(
+                  '라이프케어란?',
+                  style: AppTextStyle.body16M120.copyWith(
+                    color: AppColors.f04,
+                  ),
+                ),
               ),
+
             ],
           ),
         ),
@@ -351,13 +462,14 @@ class _MyPageState extends State<MyPage> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
-        color: AppColors.f01,
-        borderRadius: BorderRadius.circular(16),
+        color: AppColors.gray01,
+        borderRadius: BorderRadius.circular(8),
       ),
       child: Text(
         label,
-        style: AppText.bodyPrimary.copyWith(
-          fontSize: 14,
+        style: AppTextStyle.description14R120.copyWith(
+          color: AppColors.f05,
+
         ),
       ),
     );
@@ -371,7 +483,7 @@ class _MyPageState extends State<MyPage> {
           width: 8,
           height: 8,
           decoration: const BoxDecoration(
-            color: AppColors.f01,
+            color: AppColors.main,
             shape: BoxShape.circle,
           ),
         ),
@@ -380,7 +492,7 @@ class _MyPageState extends State<MyPage> {
           width: 8,
           height: 8,
           decoration: const BoxDecoration(
-            color: AppColors.f01,
+            color: AppColors.gray02,
             shape: BoxShape.circle,
           ),
         ),

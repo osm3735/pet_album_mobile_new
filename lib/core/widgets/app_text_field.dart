@@ -31,7 +31,7 @@ class AppTextField extends StatelessWidget {
         controller: controller,
         obscureText: obscureText,
         style : AppTextStyle.body16R120.copyWith(
-          color: AppColors.f05,
+          color: AppColors.f03,
         ),
         decoration: InputDecoration(
           hintText: hintText,

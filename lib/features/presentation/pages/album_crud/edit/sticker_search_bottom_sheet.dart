@@ -129,7 +129,7 @@ class _StickerBottomSheetState extends State<StickerBottomSheet>
                       width: 40,
                       height: 4,
                       decoration: BoxDecoration(
-                        color: AppColors.gray300,
+                        color: AppColors.f01,
                         borderRadius: BorderRadius.circular(2),
                       ),
                     ),
@@ -143,7 +143,7 @@ class _StickerBottomSheetState extends State<StickerBottomSheet>
                         prefixIcon: const Icon(
                           Icons.search,
                           size: 20,
-                          color: AppColors.gray500,
+                          color: AppColors.f01,
                         ),
                         suffixIcon: _searchController.text.isNotEmpty
                             ? IconButton(
@@ -165,10 +165,10 @@ class _StickerBottomSheetState extends State<StickerBottomSheet>
                       child: TabBar(
                         controller: _tabController,
                         isScrollable: true,
-                        labelColor: AppColors.fontStrong,
-                        unselectedLabelColor: AppColors.fontSecondary,
+                        labelColor: AppColors.f01,
+                        unselectedLabelColor: AppColors.f01,
                         indicator: BoxDecoration(
-                          color: AppColors.gray100,
+                          color: AppColors.f01,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         indicatorSize: TabBarIndicatorSize.label,
@@ -208,14 +208,14 @@ class _StickerBottomSheetState extends State<StickerBottomSheet>
                             Icon(
                               Icons.image_not_supported_outlined,
                               size: 64,
-                              color: AppColors.gray300,
+                              color: AppColors.f01,
                             ),
                             SizedBox(height: 16),
                             Text(
                               '스티커가 없습니다',
                               style: TextStyle(
                                 fontSize: 16,
-                                color: AppColors.fontSecondary,
+                                color: AppColors.f01,
                               ),
                             ),
                           ],
@@ -239,10 +239,10 @@ class _StickerBottomSheetState extends State<StickerBottomSheet>
                           onTap: () => _onStickerTap(sticker),
                           child: Container(
                             decoration: BoxDecoration(
-                              color: AppColors.gray50,
+                              color: AppColors.f01,
                               borderRadius: BorderRadius.circular(12),
                               border: Border.all(
-                                color: AppColors.gray100,
+                                color: AppColors.f01,
                                 width: 1,
                               ),
                             ),

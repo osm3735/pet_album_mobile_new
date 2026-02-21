@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:petAblumMobile/core/theme/app_colors.dart';
+import 'package:petAblumMobile/core/theme/app_fonts_style_suit.dart';
 
 class CommonMainAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -18,7 +20,9 @@ class CommonMainAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
+
+
+      backgroundColor: AppColors.gray00,
       elevation: 0,
       centerTitle: false,
       leadingWidth: 120,
@@ -30,13 +34,12 @@ class CommonMainAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       title: Text(
         title,
-        style: const TextStyle(
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
-          color: Colors.black,
+        style: AppTextStyle.subtitle20M120.copyWith(
+          color: AppColors.f05
         ),
       ),
       actions: actions,
+
     );
   }
 

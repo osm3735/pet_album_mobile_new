@@ -1,29 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:petAblumMobile/core/theme/app_colors.dart';
 import 'package:petAblumMobile/core/theme/app_fonts_style_suit.dart';
-import 'package:petAblumMobile/features/presentation/pages/album_crud/edit/color_select_scale.dart';
 
 /// 색상 선택 바텀시트
 class ColorPickerBottomSheet extends StatefulWidget {
-  final Function(Color) onColorAdded;
-  const ColorPickerBottomSheet({
-    Key? key,
-    required this.onColorAdded,
-  }) : super(key: key);
+  const ColorPickerBottomSheet({Key? key}) : super(key: key);
 
   @override
   State<ColorPickerBottomSheet> createState() => _ColorPickerBottomSheetState();
 
   /// 바텀시트를 표시하는 헬퍼 메서드
-  static Future<Color?> show(BuildContext context, {required Function(Color) onColorAdded} ) {
+  static Future<Color?> show(BuildContext context) {
     return showModalBottomSheet<Color>(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       barrierColor: Colors.transparent, // 배경 완전 투명
-      builder: (context) => ColorPickerBottomSheet(
-        onColorAdded: onColorAdded,
-      ),
+      builder: (context) => const ColorPickerBottomSheet(),
     );
   }
 }
@@ -293,16 +286,13 @@ class _ColorPickerBottomSheetState extends State<ColorPickerBottomSheet> {
                       // 프리셋 추가 버튼 (선택된 색상으로 표시)
                       GestureDetector(
                         onTap: () {
-                          if (selectedColor != null) {
-                            widget.onColorAdded(selectedColor!);
-                            Navigator.of(context).pop(selectedColor);
-                          }
+                          // 프리셋 추가 로직
                         },
                         child: Container(
                           width: 32,
                           height: 32,
                           decoration: BoxDecoration(
-                            color: selectedColor ?? const Color(0xFFBDBDBD),
+                            color: const Color(0xFFBDBDBD),
                             shape: BoxShape.circle,
                             // 내부 밝은 테두리 (명도 높은 효과)
                             border: Border.all(
@@ -364,7 +354,7 @@ class _ColorPickerBottomSheetState extends State<ColorPickerBottomSheet> {
                             Text(
                               'HEX:',
                               style: AppTextStyle.description14R120.copyWith(
-                                color: AppColors.fontPrimary,
+                                color: AppColors.f01,
                               ),
                             ),
                             const SizedBox(width: 8),
@@ -378,7 +368,7 @@ class _ColorPickerBottomSheetState extends State<ColorPickerBottomSheet> {
                                   isDense: true,
                                 ),
                                 style: AppTextStyle.description14R120.copyWith(
-                                  color: AppColors.fontPrimary,
+                                  color: AppColors.f01,
                                 ),
                                 onChanged: _updateColorFromHex,
                               ),

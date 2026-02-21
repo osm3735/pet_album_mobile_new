@@ -18,7 +18,7 @@ class _AlbumPageState extends State<AlbumViewPage> {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: CommonMainAppBar(
-        title: '',
+        title: '산책 모음집',
         actions: [
           IconButton(icon: const Icon(Icons.search), onPressed: () {
             Navigator.push(context, MaterialPageRoute(

@@ -11,7 +11,7 @@ class AppText {
   /// 기본 본문
   static final bodyPrimary =
   AppTextStyle.body16R120.copyWith(
-    color: AppColors.f01,
+    color: AppColors.f04,
   );
 
   /// 힌트 / 플레이스홀더
@@ -23,7 +23,7 @@ class AppText {
   /// 타이틀 / 강조
   static final titleStrong =
   AppTextStyle.subtitle20Sb120.copyWith(
-    color: AppColors.f01,
+    color: AppColors.f05,
   );
 
   /// 버튼 텍스트

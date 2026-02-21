@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:petAblumMobile/core/theme/app_colors.dart';
 import 'package:petAblumMobile/core/theme/app_fonts_style_suit.dart';
 class CommonBackAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -15,17 +16,23 @@ class CommonBackAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
+
+      automaticallyImplyLeading: false,
+
+      titleSpacing: 0, // 타이틀 기본 간격 제거
+
+      backgroundColor: AppColors.gray00,
       elevation: 0,
       leading: IconButton(
-        icon: Text(
-          '<',
-          style: AppTextStyle.subtitle20M120.copyWith(
-            color: AppColors.f05,
-          ),
+        icon: SvgPicture.asset('assets/system/icons/icon_back.svg',
+          width: 24,
+          height: 24,
+          colorFilter: ColorFilter.mode(
+            AppColors.f05,
+            BlendMode.srcIn,),
         ),
         onPressed: () => Navigator.pop(context),
-      ), // 24 X 24
+      ),
       title: title == null
           ? null
           : Text(

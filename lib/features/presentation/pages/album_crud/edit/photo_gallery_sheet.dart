@@ -337,7 +337,7 @@ class _PhotoGalleryBottomSheetState extends State<PhotoGalleryBottomSheet> {
           Text(
             title,
             style: AppTextStyle.body16M120.copyWith(
-              color: isSelected ? AppColors.fontStrong : AppColors.fontHint,
+              color: isSelected ? AppColors.f01 : AppColors.f01,
             ),
           ),
         ],

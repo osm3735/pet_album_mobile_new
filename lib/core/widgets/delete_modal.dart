@@ -28,15 +28,15 @@ class DeleteConfirmDialog extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: AppTextStyle.subtitle20Sb120.copyWith(
-          color: AppColors.f01,
+        style: AppTextStyle.subtitle20M120.copyWith(
+          color: AppColors.f05,
         ),
         textAlign: TextAlign.center,
       ),
       content: Text(
         content,
-        style: AppTextStyle.body16R120.copyWith(
-          color: AppColors.f01,
+        style: AppTextStyle.description14R120.copyWith(
+          color: AppColors.f04,
         ),
         textAlign: TextAlign.center,
       ),

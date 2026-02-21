@@ -42,7 +42,7 @@ class MenuBottomSheet extends StatelessWidget {
               width: 40,
               height: 4,
               decoration: BoxDecoration(
-                color: AppColors.gray300,
+                color: AppColors.f01,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
@@ -160,13 +160,13 @@ class _MenuItem extends StatelessWidget {
             Icon(
               icon,
               size: 24,
-              color: isDelete ? Colors.red : AppColors.gray900,
+              color: isDelete ? Colors.red : AppColors.f05,
             ),
             const SizedBox(width: 16),
             Text(
               label,
-              style: AppTextStyle.body16M120.copyWith(
-                color: isDelete ? Colors.red : AppColors.fontPrimary,
+              style: AppTextStyle.body16R120.copyWith(
+                color: isDelete ? Colors.red : AppColors.f05,
               ),
             ),
           ],

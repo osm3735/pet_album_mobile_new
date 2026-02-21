@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:petAblumMobile/core/theme/app_colors.dart';
 import 'package:petAblumMobile/core/theme/app_common_button_styles.dart';
 import 'package:petAblumMobile/core/theme/app_fonts_style_suit.dart';
@@ -91,7 +91,6 @@ class Oauth2LoginPage extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              // 구분선
               Row(
                 children: [
                   const Expanded(child: Divider()),
@@ -121,7 +120,7 @@ class Oauth2LoginPage extends StatelessWidget {
                     child: SvgPicture.asset('assets/system/icons/naver.svg', width: 52, height: 52),
                   ),
                 ],
-              ),//추후
+              ),
 
               const SizedBox(height: 32),
 

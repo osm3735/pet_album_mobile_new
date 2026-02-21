@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:petAblumMobile/core/theme/app_colors.dart';
+import 'package:petAblumMobile/core/theme/app_fonts_style_suit.dart';
 
 class CommonNavigationScaffold extends StatelessWidget {
   final Widget body;
@@ -24,16 +25,16 @@ class CommonNavigationScaffold extends StatelessWidget {
           iconTheme: WidgetStateProperty.resolveWith(
                 (states) => IconThemeData(
               color: states.contains(WidgetState.selected)
-                  ? AppColors.f01
-                  : AppColors.f01,
+                  ? AppColors.fMain
+                  : AppColors.f02,
             ),
           ),
 
           labelTextStyle: WidgetStateProperty.resolveWith(
-                (states) => TextStyle(
+                (states) => AppTextStyle.caption12R140.copyWith(
               color: states.contains(WidgetState.selected)
-                  ? AppColors.f01
-                  : AppColors.f01,
+                  ? AppColors.fMain
+                  : AppColors.f02,
               fontSize: 12,
             ),
           ),
@@ -46,7 +47,7 @@ class CommonNavigationScaffold extends StatelessWidget {
             NavigationDestination(
               icon: Icon(Icons.home_outlined),
               selectedIcon: Icon(Icons.home_outlined),
-              label: 'HOME',
+              label: '홈',
             ),
             NavigationDestination(
               icon: Icon(Icons.photo_album_outlined),

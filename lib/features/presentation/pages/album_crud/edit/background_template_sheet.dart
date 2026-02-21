@@ -7,13 +7,11 @@ import 'package:petAblumMobile/features/presentation/pages/album_crud/edit/color
 class BackgroundTabletPanel extends StatefulWidget {
   final VoidCallback onClose;
   final ValueChanged<Color?>? onColorChanged;
-  final Color? selectedColor;
 
   const BackgroundTabletPanel({
     super.key,
     required this.onClose,
     this.onColorChanged,
-    this.selectedColor
   });
 
   @override
@@ -29,6 +27,7 @@ class _BackgroundTabletPanelState
   @override
   Widget build(BuildContext context) {
     return Container(
+      // SafeArea 제거, height 제거
       padding: const EdgeInsets.only(bottom: 16),
       decoration: const BoxDecoration(
         color: Colors.white,
@@ -72,7 +71,7 @@ class _BackgroundTabletPanelState
           Text(
             '배경 템플릿',
             style: AppTextStyle.body16M120.copyWith(
-              color: AppColors.fontStrong,
+              color: AppColors.f01,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -135,7 +134,7 @@ class _BackgroundTabletPanelState
                 dashPattern: const [4, 4],
                 strokeWidth: 1,
                 radius: const Radius.circular(8),
-                color: AppColors.gray300,
+                color: AppColors.f01,
                 padding: EdgeInsets.zero,
               ),
               child: const SizedBox(
@@ -152,7 +151,7 @@ class _BackgroundTabletPanelState
                 border: Border.all(
                   color: isSelected
                       ? const Color(0xFFFBBC05)
-                      : AppColors.gray300,
+                      : AppColors.f01,
                   width: isSelected ? 2 : 1,
                 ),
                 borderRadius: BorderRadius.circular(8),
@@ -167,10 +166,10 @@ class _BackgroundTabletPanelState
           const SizedBox(height: 4),
           Text(
             label,
-            style: AppTextStyle.body12M120.copyWith(
+            style: AppTextStyle.body16R120.copyWith(
               color: isSelected
-                  ? AppColors.fontStrong
-                  : AppColors.fontHint,
+                  ? AppColors.f01
+                  : AppColors.f01,
             ),
           ),
         ],

@@ -42,13 +42,13 @@ class _AlbumSearchState extends State<AlbumSearch> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const CommonBackAppBar(title: '앨범 검색'),
+      appBar: const CommonBackAppBar(title: ' 검색'),
       body: Column(
         children: [
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             decoration: BoxDecoration(
-              color: AppColors.gray50,
+              color: AppColors.gray01,
               borderRadius: BorderRadius.circular(12),
             ),
             child: AppTextField(
@@ -57,7 +57,7 @@ class _AlbumSearchState extends State<AlbumSearch> {
               prefixIcon: const Icon(
                 Icons.search,
                 size: 20,
-                color: AppColors.gray500,
+                color: AppColors.gray02,
               ),
               suffixIcon: _nameController.text.isNotEmpty
                   ? IconButton(
@@ -81,7 +81,7 @@ class _AlbumSearchState extends State<AlbumSearch> {
                 child: Text(
                   '검색 결과가 없습니다.',
                   style: TextStyle(
-                    color: AppColors.gray500,
+                    color: AppColors.f01,
                     fontSize: 14,
                   ),
                 ),
