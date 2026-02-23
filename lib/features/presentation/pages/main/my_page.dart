@@ -509,6 +509,7 @@ class _MyPageState extends State<MyPage> {
       favoriteToy: '목욕',
       sex: '수컷',
       birth: '2025.01.02',
+      petFamily: '또또네 가족',
       onTap: () {
         Navigator.push(
           context,

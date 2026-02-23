@@ -113,6 +113,7 @@ class _PetListPageState extends State<PetListPage> {
       favoriteToy: '목욕',
       sex: '수컷',
       birth: '2025.01.02',
+      petFamily: '또또네 가족',
       topRightIcon: _isDeleteMode
           ? GestureDetector(
         onTap: () => _togglePetSelection(index),
