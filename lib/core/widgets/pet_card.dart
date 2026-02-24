@@ -51,7 +51,7 @@ class PetCard extends StatelessWidget {
                     'assets/system/pet_card/dog_pet_card.svg',
                     width: w,
                     height: h,
-                    fit: BoxFit.contain,
+                    fit: BoxFit.fill,
                   ),
 
                   if (topRightIcon != null)
@@ -62,18 +62,18 @@ class PetCard extends StatelessWidget {
                     ),
 
                   Positioned(
-                    left: 205 * s,
-                    top: 36 * s,
+                    left: 207 * s,
+                    top: 29 * s,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(12 * s),
                       child: Image.network(
                         imageUrl,
-                        width: 108 * s,
-                        height: 102 * s,
+                        width: 118 * s,
+                        height: 120 * s,
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) => Container(
-                          width: 108 * s,
-                          height: 102 * s,
+                          width: 118 * s,
+                          height: 120 * s,
                           color: Colors.grey[200],
                           child: const Icon(Icons.pets, color: Colors.grey),
                         ),
@@ -84,8 +84,8 @@ class PetCard extends StatelessWidget {
                   _buildTextOverlays(s),
 
                   Positioned(
-                    right: 33 * s,
-                    bottom: 55 * s,
+                    right: 17 * s,
+                    bottom: 45 * s,
                     child: SizedBox(
                       width: 30 * s,
                       height: 30 * s,
@@ -108,7 +108,7 @@ class PetCard extends StatelessWidget {
     return Stack(
       children: [
         Positioned(
-          left: 80 * s,
+          left: 70 * s,
           top: 50 * s,
           width: 160 * s,
           child: Stack(
@@ -143,7 +143,7 @@ class PetCard extends StatelessWidget {
         ),
         Positioned(
           left: 35 * s,
-          top: 95 * s,
+          top: 100 * s,
           child: Text(
             '나이 : $favoriteToy  품종 : $species',
             style: AppTextStyleDahyun.dahyun(
@@ -155,7 +155,7 @@ class PetCard extends StatelessWidget {
         ),
         Positioned(
           left: 35 * s,
-          top: 118 * s,
+          top: 123 * s,
           child: Text(
             '성별 : $sex   생일 : $birth',
             style: AppTextStyleDahyun.dahyun(
@@ -167,13 +167,13 @@ class PetCard extends StatelessWidget {
         ),
         Positioned(
           left: 35 * s,
-          top: 140 * s,
+          top: 148 * s,
           width: 160 * s,
           child: _buildPersonalityText(personality, s),
         ),
         Positioned(
-          left: 220 * s,
-          top: 152 * s,
+          left: 240 * s,
+          top: 162 * s,
           child: Text(
             petFamily,
             style: AppTextStyleDahyun.dahyun(
